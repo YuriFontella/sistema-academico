@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS professor (
 
 CREATE TABLE IF NOT EXISTS matricula (
   id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  turmas_id int(10) unsigned NOT NULL,
-  alunos_id int(11) NOT NULL,
+  turma_id int(10) unsigned NOT NULL,
+  aluno_id int(11) NOT NULL,
   data_matricula date DEFAULT NULL,
   PRIMARY KEY (id),
   KEY matricula_fkindex1 (aluno_id),
