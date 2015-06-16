@@ -50,11 +50,11 @@ CREATE TABLE IF NOT EXISTS turma (
   data_inicio date DEFAULT NULL,
   data_final date DEFAULT NULL,
   PRIMARY KEY (id),
-  KEY turma_fkindex1 (curso_id),
+  KEY turma_fkindex1 (curso_id)
 );
 
 ALTER TABLE turma
-  ADD CONSTRAINT turma_fkindex1 FOREIGN KEY (curso_id) REFERENCES curso (id) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT turma_fkindex1 FOREIGN KEY (curso_id) REFERENCES curso (id) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 ALTER TABLE matricula
   ADD CONSTRAINT matriculas_ibfk_1 FOREIGN KEY (aluno_id) REFERENCES aluno (id) ON DELETE NO ACTION ON UPDATE NO ACTION,
