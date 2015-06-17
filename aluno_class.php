@@ -11,7 +11,7 @@ class Aluno {
     private $data_nascimento;
 
     public function __construct() {
-
+        
     }
 
     public function getCpf() {
@@ -54,23 +54,25 @@ class Aluno {
         return $this->data_nascimento;
     }
 
-    public function getPessoa() {
-        $pessoa = array();
+    public function setAluno() {
+        $aluno = new Aluno();
+        $aluno->setCpf('00000000000');
+        $aluno->setNome('JOAO');
+        $aluno->setFone('0000');
+        $aluno->setEmail('pessoa@pessoa');
+        $retorno = AlunoModel::getInstance()->insert($aluno);
+        return $aluno;
+    }
+
+    public function getAluno() {
+        $alunos = array();
+        $alunos = AlunoModel::getInstance()->getAluno();
+        return $alunos;
     }
 
 }
-// ** está inserindo aluno no banco **
-//$aluno = new Aluno();
-//$aluno->setCpf('00000000000');
-//$aluno->setNome('JOAO');
-//$aluno->setFone('0000');
-//$aluno->setEmail('pessoa@pessoa');
-//$retorno = AlunoModel::getInstance()->insert($aluno);
-//var_dump($retorno);
 
+Aluno::setAluno();
 
-// *** retorna toda a tabela aluno
-$retorno = AlunoModel::getInstance()->getAluno();
-var_dump($retorno);
 
 
