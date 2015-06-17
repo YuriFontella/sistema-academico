@@ -1,6 +1,6 @@
 <?php
 
-require_once 'model/AlunoModel.php';
+require_once '../model/AlunoModel.php';
 
 class Aluno {
 
@@ -11,7 +11,7 @@ class Aluno {
     private $data_nascimento;
 
     public function __construct() {
-        
+
     }
 
     public function getCpf() {
@@ -73,6 +73,3 @@ class Aluno {
 }
 
 Aluno::setAluno();
-
-
-
