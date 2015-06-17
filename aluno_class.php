@@ -1,48 +1,76 @@
 <?php
 
-require_once 'connection.php';
-require_once 'pessoa_class.php';
+require_once 'model/AlunoModel.php';
 
-class Aluno extends Pessoa {
+class Aluno {
 
-  public static $instance;
+    private $cpf;
+    private $nome;
+    private $email;
+    private $fone;
+    private $data_nascimento;
 
-  private function __construct() {
-
-  }
-
-  public function getInstance() {
-    if (!isset(self::$instance))
-    self::$instance = new Aluno();
-    return self::$instance;
-  }
-
-  public function insert(Pessoa $aluno) {
-
-    try
-    {
-
-      $sql = "INSERT INTO aluno (cpf, nome, email, fone, data_nascimento) VALUES (:cpf, :nome, :email, :fone, :data_nascimento)";
-
-      $p_sql = Connection::getInstance()->prepare($sql);
-      $p_sql->bindValue(":cpf", $aluno->getCpf());
-      $p_sql->bindValue(":nome", $aluno->getNome());
-      $p_sql->bindValue(":email", $aluno->getEmail());
-      $p_sql->bindValue(":fone", $aluno->getFone());
-      $p_sql->bindValue(":data_nascimento", $aluno->getDataNascimento());
-
-      return $p_sql->execute();
+    public function __construct() {
 
     }
 
-    catch(PDOException $e)
-    {
-      echo 'Error: ' . $e->getMessage();
+    public function getCpf() {
+        return $this->cpf;
     }
 
-  }
+    public function setCpf($cpf) {
+        $this->cpf = $cpf;
+    }
+
+    public function getNome() {
+        return $this->nome;
+    }
+
+    public function setNome($nome) {
+        $this->nome = $nome;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function setEmail($email) {
+        $this->email = strtolower($email);
+    }
+
+    public function setFone($fone) {
+        $this->fone = $fone;
+    }
+
+    public function getFone() {
+        return $this->fone;
+    }
+
+    public function setDataNascimento($data) {
+        $this->data_nascimento = $data;
+    }
+
+    public function getDataNascimento() {
+        return $this->data_nascimento;
+    }
+
+    public function getPessoa() {
+        $pessoa = array();
+    }
 
 }
+// ** está inserindo aluno no banco **
+//$aluno = new Aluno();
+//$aluno->setCpf('00000000000');
+//$aluno->setNome('JOAO');
+//$aluno->setFone('0000');
+//$aluno->setEmail('pessoa@pessoa');
+//$retorno = AlunoModel::getInstance()->insert($aluno);
+//var_dump($retorno);
 
 
-?>
+// *** retorna toda a tabela aluno
+$retorno = AlunoModel::getInstance()->getAluno();
+var_dump($retorno);
+
+

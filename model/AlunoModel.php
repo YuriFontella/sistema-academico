@@ -1,6 +1,6 @@
 <?php
 
-require_once '../connection.php';
+require_once 'connection.php';
 
 class AlunoModel {
 
@@ -10,13 +10,20 @@ class AlunoModel {
 
   }
 
-  public function getInstance() {
+  public static function getInstance() {
     if (!isset(self::$instance))
-    self::$instance = new Aluno();
+    self::$instance = new AlunoModel();
     return self::$instance;
   }
-
-  public function insert(Aluno $aluno) {
+  
+  public static function getAluno() {
+      $sql = "SELECT * FROM aluno";
+      $p_sql = Connection::getInstance()->prepare($sql);
+      $p_sql->execute();
+      return $p_sql->fetchAll(PDO::FETCH_ASSOC);
+  }
+  
+  public static function insert($aluno) {
 
     try {
 
@@ -37,4 +44,5 @@ class AlunoModel {
     }
   }
 }
+
     
