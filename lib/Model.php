@@ -2,7 +2,7 @@
 
 class Model {
 
-    public function getPotatos() {
+    public function getPotatos() { // retorna o nome das colunas
         $arrayPropriedades = (array) $this;
         $temp = array();
         $r = array();
