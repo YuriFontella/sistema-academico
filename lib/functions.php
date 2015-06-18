@@ -1,11 +1,18 @@
 <?php
 
 function __autoload($class_name) {
-  $file = ABSPATH . '/classes/class-' . $class_name . '.php';
-
-  if ( ! file_exists( $file ) ) {
-    require_once ABSPATH . '/includes/404.php';
-    return;
+    
+  if (file_exists(ROOT . DS . 'app' . DS . 'controller' . DS . $class_name . '.php') ) {
+    require_once ROOT . DS . 'app' . DS . 'controller' . DS . $class_name . '.php';
+    return true;
   }
-
-  ?>
+  if (file_exists(ROOT . DS . 'app' . DS . 'model' . DS . $class_name . '.php') ) {
+    require_once ROOT . DS . 'app' . DS . 'model' . DS . $class_name . '.php';
+    return true;
+  }
+  if (file_exists(ROOT . DS . 'lib' . DS . $class_name . '.php') ) {
+    require_once ROOT . DS . 'lib' . DS . $class_name . '.php';
+    return true;
+  }
+  return false;
+}

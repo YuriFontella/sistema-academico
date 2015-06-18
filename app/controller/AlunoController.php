@@ -1,8 +1,6 @@
 <?php
 
-require_once '../model/AlunoModel.php';
-
-class Aluno {
+class AlunoController {
 
     private $cpf;
     private $nome;
