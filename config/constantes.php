@@ -1,3 +1,7 @@
 <?php
 
-const URL_BASE = 'http://localhost/ifc/sistema-academico/';
+define( 'ROOT', dirname( __FILE__ ) );
+
+
+
+?>
