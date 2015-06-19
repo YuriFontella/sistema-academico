@@ -32,9 +32,7 @@
             <div class="row">
                 <div class="col-md-2">
                     <div class="panel panel-default">
-                        <!-- Default panel contents -->
                         <div class="panel-heading">CURSO</div>
-                        <!-- List group -->
                         <ul class="list-group">
                             <a href="#"><li class="list-group-item">Curso</li></a>
                             <a href="#"><li class="list-group-item">Grade Curricular</li></a>
@@ -43,12 +41,22 @@
                         </ul>
                     </div>
                     <div class="panel panel-default">
+                        <div class="panel-heading">TURMAS</div>
+                        <ul class="list-group">
+                            <a href="#"><li class="list-group-item">Visualizar Turmas</li></a>
+                            <a href="#"><li class="list-group-item">Cadastrar Turmas</li></a>
+                        </ul>
+                    </div>
+                    <div class="panel panel-default">
                         <!-- Default panel contents -->
                         <div class="panel-heading">ALUNO</div>
                         <!-- List group -->
                         <ul class="list-group">
                             <a href="#"><li class="list-group-item">Nova Matricula</li></a>
-                            <a href="#"><li class="list-group-item">Listagem Matricula</li></a>
+                            <a href="<?= BASE_URL . 'index.php?c=AlunoController&m=retrieve'?>"><li class="list-group-item">Listagem Matricula</li></a>
+                            <a href="#"><li class="list-group-item">Novo Aluno</li></a>
+                            <a href="#"><li class="list-group-item">Alunos por Turma ou Curso</li></a>
+                            
                         </ul>
                     </div>
                     <div class="panel panel-default">
@@ -57,7 +65,7 @@
                         <!-- List group -->
                         <ul class="list-group">
                             <a href="#"><li class="list-group-item">Cadastro</li></a>
-                            <a href="#"><li class="list-group-item">Listagem Professo</li></a>
+                            <a href="#"><li class="list-group-item">Listagem Professor</li></a>
                         </ul>
                     </div>
 
