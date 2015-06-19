@@ -55,5 +55,6 @@ class Aluno extends Model {
     public function setDataNascimento($dataNascimento) {
         $this->dataNascimento = $dataNascimento;
     }
+    
 
 }
