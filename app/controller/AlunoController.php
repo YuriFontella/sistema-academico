@@ -15,6 +15,34 @@ class AlunoController {
 		$this->alunos = $alunos;
 	}
 
+  public function matricula()
+  {
+  	$this->view = 'aluno' . DS . 'matricula.php';
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+
+			$a = new Aluno();
+			$a->setNome($_POST['nome']);
+			$a->setCpf($_POST['cpf']);
+			$a->setEmail($_POST['email']);
+			$a->setFone($_POST['fone']);
+			$a->setDataNascimento($_POST['data_nascimento']);
+			
+			if($a->create())
+			{
+			header('location:' . BASE_URL);
+			}
+			else
+			{
+				//echo "<script>alert('Erro')</script>";
+				header('location:' . BASE_URL);
+			}
+
+    }
+
+  }
+
 	/**
 	 * @return mixed
 	 */

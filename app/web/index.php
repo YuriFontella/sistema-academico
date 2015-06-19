@@ -47,7 +47,7 @@
                         <div class="panel-heading">ALUNO</div>
                         <!-- List group -->
                         <ul class="list-group">
-                            <a href="#"><li class="list-group-item">Nova Matricula</li></a>
+                            <a href="<?php echo BASE_URL; ?>index.php?c=AlunoController&m=matricula"><li class="list-group-item">Nova Matricula</li></a>
                             <a href="#"><li class="list-group-item">Listagem Matricula</li></a>
                         </ul>
                     </div>

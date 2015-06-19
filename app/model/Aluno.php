@@ -32,7 +32,7 @@ class Aluno extends Model {
         return $this->fone;
     }
 
-    public function getData_nascimento() {
+    public function getDataNascimento() {
         return $this->data_nascimento;
     }
 
