@@ -10,4 +10,5 @@ define('BASE_URL', $protocol . $server . $basename);
 define('APP', ROOT . DS . 'app');
 define('VIEW', APP . DS . 'view');
 
+
 require_once ROOT . DS . 'lib' . DS . 'functions.php';  // DS = "/"

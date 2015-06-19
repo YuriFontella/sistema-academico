@@ -11,10 +11,10 @@
  *
  * @author Luis Augusto Silva - luis.bc@hotmail.com
  */
-class Home {
-    
-    public function index() {
-        var_dump('teste');  
-    }
-    
+class HomeController {
+
+	public function index() {
+
+	}
+
 }

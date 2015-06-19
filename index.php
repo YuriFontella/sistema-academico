@@ -1,22 +1,24 @@
 <?php
 
-require_once 'config/config.php';    
-  
-$c = (isset($_REQUEST['c'])) ? $_REQUEST['c'] : 'HomeController' ;
-$m = (isset($_REQUEST['m'])) ? $_REQUEST['m'] : 'index' ;
-$p = (isset($_REQUEST['p'])) ? $_REQUEST['p'] : '' ;
+require_once 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
-$controller =  new $c;
+$c = (isset($_REQUEST['c'])) ? $_REQUEST['c'] : 'HomeController';
+$m = (isset($_REQUEST['m'])) ? $_REQUEST['m'] : 'index';
+$p = (isset($_REQUEST['p'])) ? $_REQUEST['p'] : '';
 
-if (!is_array($p)){
-    if ($p != null && strlen($p) > 0) {
-        $p = [$p];
-    } else {
-         $p = [];
-    }
+$controller = new $c;
+
+if (!is_array($p)) {
+	if ($p != null && strlen($p) > 0) {
+		$p = [$p];
+	} else {
+		$p = [];
+	}
 }
 
-call_user_func_array(array($controller, $m), $p);
+$content = call_user_func_array(array($controller, $m), $p);
+
+include_once APP . DS . 'web' . DS . 'index.php';
 
 
 
