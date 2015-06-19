@@ -1,6 +1,6 @@
 <?php
 
-require_once ROOT . DS . 'config/database.php';
+require_once ROOT.DS. 'config' .DS. 'database.php';
 
 public $host      = '',
        $db_name   = '',

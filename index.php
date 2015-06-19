@@ -6,10 +6,6 @@ $c = (isset($_REQUEST['c'])) ? $_REQUEST['c'] : 'HomeController' ;
 $m = (isset($_REQUEST['m'])) ? $_REQUEST['m'] : 'index' ;
 $p = (isset($_REQUEST['p'])) ? $_REQUEST['p'] : '' ;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7f58bac419fe2ef655f54840211af6c376b39b3b
 $controller =  new $c;
 
 if (!is_array($p)){
@@ -19,6 +15,7 @@ if (!is_array($p)){
          $p = [];
     }
 }
+
 call_user_func_array(array($controller, $m), $p);
 
 
