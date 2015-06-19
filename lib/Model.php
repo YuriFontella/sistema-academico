@@ -60,7 +60,11 @@ class Model {
             echo 'Error: ' . $e->getMessage();
         }
     }
-
+    
+    public function findbyAttributes($atributo) {
+        
+    }
+    
     public function update($model) {
         
     }

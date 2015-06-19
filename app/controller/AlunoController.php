@@ -8,7 +8,14 @@ class AlunoController {
 		var_dump('oi');
 	}
 
-	public function retrieve($a = null, $b = null) {
+	public function retrieve() {
+		$this->view = 'aluno' . DS . 'retrieve.php';
+		$aluno = new Aluno();
+		$alunos = $aluno->retrieve();
+		$this->alunos = $alunos;
+	}
+        
+        public function porCurso() {
 		$this->view = 'aluno' . DS . 'retrieve.php';
 		$aluno = new Aluno();
 		$alunos = $aluno->retrieve();
