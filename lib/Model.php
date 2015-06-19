@@ -19,8 +19,7 @@ class Model {
 
     public function retrieve() {
         $tableName =  strtolower((get_class($this))); // buscar o nome da tabela
-        $tableName = str_replace("controller","",$tableName);
-        
+        //$tableName = str_replace("controller","",$tableName);
         $sql = "SELECT * FROM " . $tableName;
         $p_sql = Connection::getInstance()->prepare($sql);
         $p_sql->execute();

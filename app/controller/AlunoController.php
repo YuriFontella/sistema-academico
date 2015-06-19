@@ -6,13 +6,13 @@ class AlunoController {
         var_dump('oi eu sou um controller');
     }
     
-    public function retrieve() {
+    public function retrieve($a = null, $b = null) {
         var_dump('aqui retornarei todos os alunos');
-        $array =  Aluno::retrieve();
-        
+        $aluno = new Aluno();
+        $alunos = $aluno->retrieve();
+        var_dump($b, $a);
         echo "<pre>";
-        var_dump($array);
-        
+        var_dump($alunos);
         
     }
 }
