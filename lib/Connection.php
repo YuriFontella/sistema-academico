@@ -2,6 +2,7 @@
 
 require_once ROOT . DS . 'config' . DS . 'database.php';
 
+
 class Connection {
     
     public $host;
