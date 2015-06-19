@@ -1,30 +1,27 @@
 <?php
 
-require_once ROOT.DS. 'config' .DS. 'database.php';
-
-public $host      = '',
-       $db_name   = '',
-       $password  = '',
-       $user      = '';
+require_once ROOT . DS . 'config' . DS . 'database.php';
 
 class Connection {
+    
+    public $host;
+    public $db_name;
+    public $password;
+    public $user;
 
     private static $instance;
 
+    public function __construct($host = null, $db_name = null, $password = null, $user = null) {
 
-    public function __construct($host = null, $db_name  = null, $password = null, $user = null)
-    {
-    
-        $this->host     = defined( 'HOSTNAME'    ) ? HOSTNAME    : $this->host;
-        $this->db_name  = defined( 'DB_NAME'     ) ? DB_NAME     : $this->db_name;
-        $this->password = defined( 'DB_PASSWORD' ) ? DB_PASSWORD : $this->password;
-        $this->user     = defined( 'DB_USER'     ) ? DB_USER     : $this->user;
-
+        $this->host = defined('HOSTNAME') ? HOSTNAME : $this->host;
+        $this->db_name = defined('DB_NAME') ? DB_NAME : $this->db_name;
+        $this->password = defined('DB_PASSWORD') ? DB_PASSWORD : $this->password;
+        $this->user = defined('DB_USER') ? DB_USER : $this->user;
     }
 
     public static function getInstance() {
 
-        $pdo  = "mysql:host={$this->host};";
+        $pdo = "mysql:host={$this->host};";
         $pdo .= "dbname={$this->db_name};";
 
         if (!isset(self::$instance)) {
