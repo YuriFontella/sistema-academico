@@ -52,16 +52,10 @@
                         <div class="panel-heading">ALUNO</div>
                         <!-- List group -->
                         <ul class="list-group">
-<<<<<<< HEAD
-                            <a href="<?php echo BASE_URL; ?>index.php?c=AlunoController&m=matricula"><li class="list-group-item">Nova Matricula</li></a>
-                            <a href="#"><li class="list-group-item">Listagem Matricula</li></a>
-=======
-                            <a href="#"><li class="list-group-item">Nova Matricula</li></a>
+                            <a href="<?= BASE_URL . 'index.php?c=AlunoController&m=matricula'?>"><li class="list-group-item">Nova Matricula</li></a>
                             <a href="<?= BASE_URL . 'index.php?c=AlunoController&m=retrieve'?>"><li class="list-group-item">Listagem Matricula</li></a>
                             <a href="#"><li class="list-group-item">Novo Aluno</li></a>
                             <a href="#"><li class="list-group-item">Alunos por Turma ou Curso</li></a>
-                            
->>>>>>> 7a7053dd88aea68ef65bbd45b1d8c914d1121fed
                         </ul>
                     </div>
                     <div class="panel panel-default">
