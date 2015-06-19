@@ -1,7 +1,7 @@
 <?php
 
 class Model {
-
+    
     public function getPotatos() { // retorna o nome das colunas
         $arrayPropriedades = (array) $this;
         $temp = array();
@@ -18,7 +18,10 @@ class Model {
     }
 
     public function retrieve() {
-        $sql = "SELECT * FROM " . strtolower(get_class($this));
+        $tableName =  strtolower((get_class($this))); // buscar o nome da tabela
+        $tableName = str_replace("controller","",$tableName);
+        
+        $sql = "SELECT * FROM " . $tableName;
         $p_sql = Connection::getInstance()->prepare($sql);
         $p_sql->execute();
         return $p_sql->fetchAll(PDO::FETCH_ASSOC);
@@ -40,7 +43,7 @@ class Model {
             $sql .= '(' . implode(',', $p) . ') VALUES (' . implode(',', $p2) . ')';
 
             $p_sql = Connection::getInstance()->prepare($sql);
-            
+
             foreach ($propriedades as $propriedade => $valor) {
                 $p = ':' . $propriedade;
                 $get = 'get' . ucfirst($propriedade);
@@ -52,7 +55,7 @@ class Model {
                 $v = $model->$get();
                 $p_sql->bindValue($p, $v);
             }
-            
+
             return $p_sql->execute();
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
