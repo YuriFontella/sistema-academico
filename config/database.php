@@ -1,5 +1,6 @@
 <?php
 
+//base
 define( 'HOSTNAME', 'localhost' );
 define( 'DB_NAME', 'sysacad' );
 define( 'DB_USER', 'root' );
