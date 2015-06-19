@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<title>Bootstrap 101 Template</title>
+        <title>SYSACAD</title>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -20,7 +20,8 @@
 <body>
 <div class="container">
 	<div style="background-color: #f0f0f0">
-	<?php include_once(VIEW . DS . $controller->getView()); ?>
+	<?php 
+        include_once(VIEW . DS . $controller->getView()); ?>
 	</div>
 </div>
 
