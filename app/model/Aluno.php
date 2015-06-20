@@ -6,14 +6,14 @@ class Aluno extends Model {
     private $nome;
     private $email;
     private $fone;
-    private $data_nascimento;
+    private $datanasc;
 
-    public function __construct($cpf = null, $nome = null, $email = null, $fone = null, $data_nascimento = null) {
+    public function __construct($cpf = null, $nome = null, $email = null, $fone = null, $datanasc = null) {
         $this->cpf = $cpf;
         $this->nome = $nome;
         $this->email = $email;
         $this->fone = $fone;
-        $this->data_nascimento = $data_nascimento;
+        $this->datanasc = $datanasc;
     }
 
     public function getCpf() {
@@ -32,8 +32,8 @@ class Aluno extends Model {
         return $this->fone;
     }
 
-    public function getDataNascimento() {
-        return $this->data_nascimento;
+    public function getDatanasc() {
+        return $this->datanasc;
     }
 
     public function setCpf($cpf) {
@@ -52,8 +52,8 @@ class Aluno extends Model {
         $this->fone = $fone;
     }
 
-    public function setDataNascimento($dataNascimento) {
-        $this->dataNascimento = $dataNascimento;
+    public function setDatanasc($datanasc) {
+        $this->datanasc = $datanasc;
     }
     
 
