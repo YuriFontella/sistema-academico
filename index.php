@@ -21,7 +21,6 @@ $content = call_user_func_array(array($controller, $m), $p);
 include_once APP . DS . 'web' . DS . 'index.php';
 
 
-
 //$a = new Aluno();
 //echo '<pre>';
 //

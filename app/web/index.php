@@ -67,7 +67,6 @@
                             <a href="#"><li class="list-group-item">Listagem Professor</li></a>
                         </ul>
                     </div>
-
                 </div>
                 <div class="col-md-10">
                     <?php include_once(VIEW . DS . $controller->getView()); ?>
