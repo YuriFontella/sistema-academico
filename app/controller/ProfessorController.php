@@ -5,12 +5,10 @@
  *
  * @author Luis Augusto Silva - luis.bc@hotmail.com
  */
-class ProfessorController extends Controller {
-    
-    public $view;
+class ProfessorController extends Application {
 
     public function matricula() {
-        $this->view = 'professor' . DS . 'form.php';
+        $this->view = 'form';
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -26,6 +24,6 @@ class ProfessorController extends Controller {
             }
         }
     }
-    
+
 
 }

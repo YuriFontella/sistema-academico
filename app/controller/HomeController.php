@@ -4,16 +4,10 @@
  *
  * @author Luis Augusto Silva - luis.bc@hotmail.com
  */
-class HomeController {
+class HomeController extends Application {
 
-	private $view;
-        
 	public function index() {
-            $this->view = 'home' . DS . 'painel.php';
-            return $this->view;
-	}
-        
-        public function getView() {
+            $this->view = 'painel';
             return $this->view;
 	}
 

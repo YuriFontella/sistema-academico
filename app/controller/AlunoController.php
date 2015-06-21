@@ -1,29 +1,27 @@
 <?php
 
-class AlunoController {
-
-    private $view;
+class AlunoController extends Application {
 
     public function index() {
         var_dump('eu sou o index');
     }
 
     public function retrieve() {
-        $this->view = 'aluno' . DS . 'retrieve.php';
+        $this->view = 'retrieve';
         $aluno = new Aluno();
         $alunos = $aluno->retrieve();
         $this->alunos = $alunos;
     }
 
     public function porCurso() {
-        $this->view = 'aluno' . DS . 'retrieve.php';
-        $aluno = new Aluno();
-        $alunos = $aluno->retrieve();
-        $this->alunos = $alunos;
-    }
+  		$this->view = 'retrieve';
+  		$aluno = new Aluno();
+  		$alunos = $aluno->query("SELECT * FROM aluno a JOIN curso c ON a.id = c.aluno_id ORDER BY a.id ASC");
+  		$this->alunos = $alunos;
+  	}
 
     public function matricula() {
-        $this->view = 'aluno' . DS . 'matricula.php';
+        $this->view = 'matricula';
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -32,22 +30,15 @@ class AlunoController {
             $a->setCpf($_POST['cpf']);
             $a->setEmail($_POST['email']);
             $a->setFone($_POST['fone']);
-            $a->setDatanasc($_POST['data_nascimento']);
+            $a->setDatanasc($_POST['datanasc']);
 
             if ($a->create()) {
-                header('location:' . BASE_URL);
+                header('location:' . BASE_URL . 'aluno/retrieve');
             } else {
-                //echo "<script>alert('Erro')</script>";
-                header('location:' . BASE_URL);
+                echo "<script>alert('Erro')</script>";
+                //header('location:' . BASE_URL);
             }
         }
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getView() {
-        return $this->view;
     }
 
 }

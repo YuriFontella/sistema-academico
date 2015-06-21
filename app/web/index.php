@@ -22,8 +22,8 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
-                       SYSCAD
+                    <a class="navbar-brand" href="<?php echo BASE_URL ?>">
+                       SYSACAD
                     </a>
                 </div>
             </div>
@@ -52,8 +52,8 @@
                         <div class="panel-heading">ALUNO</div>
                         <!-- List group -->
                         <ul class="list-group">
-                            <a href="<?= BASE_URL . 'index.php?c=AlunoController&m=matricula'?>"><li class="list-group-item">Nova Matricula</li></a>
-                            <a href="<?= BASE_URL . 'index.php?c=AlunoController&m=retrieve'?>"><li class="list-group-item">Listagem Matricula</li></a>
+                            <a href="<?= BASE_URL . 'aluno/matricula'?>"><li class="list-group-item">Nova Matricula</li></a>
+                            <a href="<?= BASE_URL . 'aluno/retrieve'?>"><li class="list-group-item">Listagem Matricula</li></a>
                             <a href="#"><li class="list-group-item">Novo Aluno</li></a>
                             <a href="#"><li class="list-group-item">Alunos por Turma ou Curso</li></a>
                         </ul>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="col-md-10">
-                    <?php include_once(VIEW . DS . $controller->getView()); ?>
+                  <?php $controller->getContent(); ?>
                 </div>
             </div>
         </div>
@@ -81,4 +81,3 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </body>
 </html>
-

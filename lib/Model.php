@@ -1,7 +1,13 @@
 <?php
 
 class Model {
-    
+
+  public function query($sql, $data = null) {
+    $p_sql = Connection::getInstance()->prepare($sql);
+    $p_sql->execute($data);
+    return $p_sql->fetchAll(PDO::FETCH_ASSOC);
+  }
+
     public function getPotatos() { // retorna o nome das colunas
         $arrayPropriedades = (array) $this;
         $temp = array();
@@ -49,7 +55,7 @@ class Model {
 //                if (!is_numeric($valor)) {
 //                    $v = '\'' . $model->$get() . '\'';
 //                } else {
-//                    
+//
 //                }
                 $v = $model->$get();
                 $p_sql->bindValue($p, $v);
@@ -60,17 +66,17 @@ class Model {
             echo 'Error: ' . $e->getMessage();
         }
     }
-    
+
     public function findbyAttributes($atributo) {
-        
+
     }
-    
+
     public function update($model) {
-        
+
     }
 
     public function delete($model) {
-        
+
     }
 
 }

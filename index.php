@@ -1,10 +1,25 @@
 <?php
 
+/* Atom aqruivo modificado git integration para não ficar mais laranja */
+
 require_once 'config' . DIRECTORY_SEPARATOR . 'config.php';
+
+$url = substr($_SERVER['REQUEST_URI'], 1);
+list($c, $m, $p) = explode('/', $url);
+$c = ucfirst($c) . 'Controller';
+if($m == null)
+{
+	$c = 'HomeController';
+	$m = 'index';
+}
+
+/*
 
 $c = (isset($_REQUEST['c'])) ? $_REQUEST['c'] : 'HomeController';
 $m = (isset($_REQUEST['m'])) ? $_REQUEST['m'] : 'index';
 $p = (isset($_REQUEST['p'])) ? $_REQUEST['p'] : '';
+
+*/
 
 $controller = new $c;
 
@@ -19,7 +34,6 @@ if (!is_array($p)) {
 $content = call_user_func_array(array($controller, $m), $p);
 
 include_once APP . DS . 'web' . DS . 'index.php';
-
 
 //$a = new Aluno();
 //echo '<pre>';
