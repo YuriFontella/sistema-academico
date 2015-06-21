@@ -5,6 +5,6 @@
  *
  * @author luisaugustosilva
  */
-class CursoController extends Application {
+class CursoController extends Controller {
     //put your code here
 }

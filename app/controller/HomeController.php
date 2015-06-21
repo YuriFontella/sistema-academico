@@ -4,7 +4,7 @@
  *
  * @author Luis Augusto Silva - luis.bc@hotmail.com
  */
-class HomeController extends Application {
+class HomeController extends Controller {
 
 	public function index() {
             $this->view = 'painel';

@@ -1,6 +1,6 @@
 <?php
 
-class AlunoController extends Application {
+class AlunoController extends Controller {
 
     public function index() {
         var_dump('eu sou o index');
@@ -13,7 +13,7 @@ class AlunoController extends Application {
         $this->alunos = $alunos;
     }
 
-    public function porCurso() {
+    public function porcurso() {
   		$this->view = 'retrieve';
   		$aluno = new Aluno();
   		$alunos = $aluno->query("SELECT * FROM aluno a JOIN curso c ON a.id = c.aluno_id ORDER BY a.id ASC");

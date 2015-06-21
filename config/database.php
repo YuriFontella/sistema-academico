@@ -13,4 +13,4 @@ define( 'DB_USER', 'mariadacasa01' );
 define( 'DB_PASSWORD', 'abcd102030' );
 
 // Nome do DB e HOSTNAME juntos...
-define( 'HOSTNAME_DBNAME', 'mysql:host=mysql.mariadacasa.art.br;dbname=mariadacasa01' );
+define( 'HOSTNAME_DBNAME', 'mysql:host='.HOSTNAME.';dbname='.DB_NAME.'' );

@@ -5,7 +5,7 @@
  *
  * @author Luis Augusto Silva - luis.bc@hotmail.com
  */
-class ProfessorController extends Application {
+class ProfessorController extends Controller {
 
     public function matricula() {
         $this->view = 'form';
