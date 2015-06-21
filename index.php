@@ -4,8 +4,8 @@
 
 require_once 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
-$url = substr($_SERVER['REQUEST_URI'], 1);
-list($c, $m, $p) = explode('/', $url);
+$url = substr($_SERVER['REQUEST_URI'], 1); // Url de preodução /site/controller/method/parameter
+list($c, $m, $p) = explode('/', $url);     // Ex: sysacad.com/aluno/excluir/3
 $c = ucfirst($c) . 'Controller';
 if($m == null)
 {
