@@ -21,6 +21,7 @@
     <?php else: ?>
       <tr>
         <td>Nenhum resultado!</td>
+        <?php echo $controller->getClass(); ?>
       </tr>
     <?php endif; ?>
 

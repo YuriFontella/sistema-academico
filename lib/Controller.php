@@ -23,9 +23,9 @@ class Controller {
   public function getContent()
   {
 
-    include_once(VIEW . DS . strtolower(reset(explode('Controller', $this->getClass()))) . DS . $this->view . '.php');
+    $page = VIEW . DS . strtolower(reset(explode('Controller', $this->getClass()))) . DS . $this->view . '.php';
 
-    return false;
+    return $page;
   }
 
   public function getModelName() {

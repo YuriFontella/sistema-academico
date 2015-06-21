@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="col-md-10">
-                  <?php $controller->getContent(); ?>
+                  <?php include_once($controller->getContent()); ?>
                 </div>
             </div>
         </div>

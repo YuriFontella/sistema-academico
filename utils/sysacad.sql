@@ -30,9 +30,9 @@ CREATE TABLE `aluno` (
   `nome` varchar(49) NOT NULL,
   `email` varchar(49) NOT NULL,
   `fone` varchar(14) NOT NULL,
-  `data_nascimento` date DEFAULT NULL,
+  `datanasc` varchar(14) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -135,4 +135,4 @@ CREATE TABLE `turma` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-20 15:50:02
+-- Dump completed on 2015-06-21  2:15:36
