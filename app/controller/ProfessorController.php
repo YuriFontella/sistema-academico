@@ -12,7 +12,7 @@ class ProfessorController extends Controller {
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            $a = new Aluno();
+            $a = new Professor();
             $a->setNome($_POST['nome']);
             $a->setEmail($_POST['email']);
 

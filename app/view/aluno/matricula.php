@@ -1,13 +1,15 @@
 <form method="post">
-	<label>Nome</label>
-	<input type="text" name="nome">
-	<label>CPF</label>
-	<input type="text" name="cpf">
-	<label>FONE</label>
-	<input type="text" name="fone">
-  <label>EMAIL</label>
-	<input type="text" name="email">
-	<label>DATA NASCIMENTO</label>
-	<input type="text" name="datanasc">
-	<button type="submit">Enviar</button>
+    <label>NOME</label>
+    <input type="text" name="nome">
+    <label>CPF</label>
+    <input type="text" name="cpf">
+    <label>DATA NASCIMENTO</label>
+    <input type="text" name="datanasc">
+    <br />
+    <label>FONE</label>
+    <input type="text" name="fone">
+    <label>EMAIL</label>
+    <input type="text" name="email">
+    <br />
+    <button type="submit">Enviar</button>
 </form>

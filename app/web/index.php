@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>SYSACAD</title>
-
+        <base href="<?= BASE_URL ?>" >
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -34,17 +34,18 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">CURSO</div>
                         <ul class="list-group">
-                            <a href="#"><li class="list-group-item">Curso</li></a>
+                            <a href="curso"><li class="list-group-item">Curso</li></a>
+                            <a href="curso/cadastrar"><li class="list-group-item">Cadastrar Curso</li></a>
                             <a href="#"><li class="list-group-item">Grade Curricular</li></a>
-                            <a href="#"><li class="list-group-item">Disciplinas</li></a>
-                            <a href="#"><li class="list-group-item">Turmas</li></a>
+                            <a href="disciplina/cadastrar"><li class="list-group-item">Nova Disciplinas</li></a>
+                            <a href="disciplina"><li class="list-group-item">Disciplinas</li></a>
                         </ul>
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-heading">TURMAS</div>
                         <ul class="list-group">
-                            <a href="#"><li class="list-group-item">Visualizar Turmas</li></a>
-                            <a href="#"><li class="list-group-item">Cadastrar Turmas</li></a>
+                            <a href="turma"><li class="list-group-item">Visualizar Turmas</li></a>
+                            <a href="turma/cadastrar"><li class="list-group-item">Cadastrar Turmas</li></a>
                         </ul>
                     </div>
                     <div class="panel panel-default">
@@ -52,9 +53,9 @@
                         <div class="panel-heading">ALUNO</div>
                         <!-- List group -->
                         <ul class="list-group">
-                            <a href="<?= BASE_URL . 'aluno/matricula'?>"><li class="list-group-item">Nova Matricula</li></a>
-                            <a href="<?= BASE_URL . 'aluno/retrieve'?>"><li class="list-group-item">Listagem Matricula</li></a>
-                            <a href="#"><li class="list-group-item">Novo Aluno</li></a>
+                            <a href="<?= BASE_URL . 'aluno/matricula'?>"><li class="list-group-item">Novo Aluno</li></a>
+                            <a href="<?= BASE_URL . 'aluno/retrieve'?>"><li class="list-group-item">Listagem Alunos</li></a>
+                            <a href="#"><li class="list-group-item">Matricular Aluno</li></a>
                             <a href="#"><li class="list-group-item">Alunos por Turma ou Curso</li></a>
                         </ul>
                     </div>
@@ -63,8 +64,8 @@
                         <div class="panel-heading">PROFESSOR</div>
                         <!-- List group -->
                         <ul class="list-group">
-                            <a href="#"><li class="list-group-item">Cadastro</li></a>
-                            <a href="#"><li class="list-group-item">Listagem Professor</li></a>
+                            <a href="<?= BASE_URL . 'professor/matricula'?>"><li class="list-group-item">Cadastro</li></a>
+                            <a href="<?= BASE_URL . 'professor/retrieve'?>"><li class="list-group-item">Listagem Professor</li></a>
                         </ul>
                     </div>
                 </div>

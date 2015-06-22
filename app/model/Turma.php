@@ -9,12 +9,12 @@ class Turma extends Model{
     
     private $curso_id;
     private $data_inicio;
-    private $data_fim;
+    private $data_final;
     
-    public function __construct($curso_id, $data_inicio, $data_fim) {
+    public function __construct($curso_id = null, $data_inicio = null, $data_fim = null) {
         $this->curso_id = $curso_id;
         $this->data_inicio = $data_inicio;
-        $this->data_fim = $data_fim;
+        $this->data_final = $data_fim;
     }
     
     public function getCurso_id() {
@@ -25,8 +25,8 @@ class Turma extends Model{
         return $this->data_inicio;
     }
 
-    public function getData_fim() {
-        return $this->data_fim;
+    public function getData_final() {
+        return $this->data_final;
     }
 
     public function setCurso_id($curso_id) {
@@ -37,11 +37,8 @@ class Turma extends Model{
         $this->data_inicio = $data_inicio;
     }
 
-    public function setData_fim($data_fim) {
-        $this->data_fim = $data_fim;
+    public function setData_final($data_final) {
+        $this->data_final = $data_final;
     }
-
-
-
-    
 }
+    

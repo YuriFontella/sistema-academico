@@ -2,10 +2,6 @@
 
 class AlunoController extends Controller {
 
-    public function index() {
-        var_dump('eu sou o index');
-    }
-
     public function retrieve() {
         $this->view = 'retrieve';
         $aluno = new Aluno();
