@@ -4,7 +4,7 @@
 
 require_once 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
-$url = substr($_SERVER['REQUEST_URI'], 1); // Url de preodução /site/controller/method/parameter
+$url = substr($_SERVER['REQUEST_URI'], 1); // Url de produção /site/controller/method/parameter
 $array = explode('/', $url);
 list($m, $c) = array_reverse($array);
 list($m, $p) = explode('?', $m);
