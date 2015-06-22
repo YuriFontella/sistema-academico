@@ -4,14 +4,17 @@
 
 require_once 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
-$url = substr($_SERVER['REQUEST_URI'], 1); // Url de produção /site/controller/method/parameter
-$array = explode('/', $url);
-list($m, $c) = array_reverse($array);
-if(strpos($m, '?'))
+$path = strlen($_SERVER["DOCUMENT_ROOT"]) -1;
+$exclude = substr( $_SERVER["SCRIPT_FILENAME"], $path, -10);
+
+$url = substr($_SERVER['REQUEST_URI'], strlen($exclude)); // Url de produção /site/controller/method/parameter
+list($c, $m, $p) = explode('/', $url);
+
+$c = ucfirst($c) . 'Controller';
+if ($m == null)
 {
-  list($m, $p) = explode('?', $m);
-  $p = explode('=', $p);
-  $p = $p[1];
+  $c = 'HomeController';
+  $m = 'index';
 }
 
 /*
@@ -37,12 +40,6 @@ if (strpos($url, 'ifc/_sistema-academico') != 0) {
 }
 
 */
-
-$c = ucfirst($c) . 'Controller';
-if ($m == null) {
-    $c = 'HomeController';
-    $m = 'index';
-}
 
 $controller = new $c;
 //var_dump($c);
