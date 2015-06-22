@@ -5,7 +5,13 @@
 require_once 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
 $url = substr($_SERVER['REQUEST_URI'], 1); // Url de preodução /site/controller/method/parameter
-//list($c, $m, $p) = explode('/', $url);
+$array = explode('/', $url);
+list($m, $c) = array_reverse($array);
+list($m, $p) = explode('?', $m);
+$p = explode('=', $p);
+$p = $p[1];
+
+/*
 
 if (strpos($url, 'ifc/_sistema-academico') != 0) {
     $value = explode('/', $url);
@@ -27,9 +33,11 @@ if (strpos($url, 'ifc/_sistema-academico') != 0) {
     }
 }
 
+*/
+
 $c = ucfirst($c) . 'Controller';
 if ($m == null) {
-    $c = ($c != 'Controller' ? $c : 'HomeController');
+    $c = 'HomeController';
     $m = 'index';
 }
 
