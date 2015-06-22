@@ -35,13 +35,19 @@ if (strpos($url, 'ifc/_sistema-academico') != 0) {
     }
 }
 
+
 */
 
-$c = ucfirst($c) . 'Controller';
+//$c = ucfirst($c) . 'Controller';
+
+/*
+
 if ($m == null) {
     $c = ($c != 'Controller' ? $c : 'HomeController');
     $m = 'index';
 }
+
+*/
 
 $controller = new $c;
 //var_dump($c);
