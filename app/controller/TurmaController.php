@@ -14,9 +14,10 @@ class TurmaController extends Controller {
     }
     
     public function retrieve() {   
-        $this->cursos = $this->getCurso();
-        var_dump($this->cursos);
-        parent::retrieve();
+        $this->view = 'retrieve';
+        $turma = new Turma();
+        $turmas = $turma->retrieve();
+        $this->turmas = $turmas;
     }
     
     public function cadastrar() {

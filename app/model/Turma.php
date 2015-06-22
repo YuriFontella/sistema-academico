@@ -40,5 +40,18 @@ class Turma extends Model{
     public function setData_final($data_final) {
         $this->data_final = $data_final;
     }
+
+    public function retrieve() {
+        //$tableName = str_replace("controller","",$tableName);
+        $sql = "SELECT turma.id,"
+                . "    turma.data_inicio,"
+                . "    turma.data_final, "
+                . "    curso.nome "
+                . "    FROM turma"
+                . "    JOIN curso on turma.curso_id = curso.id";
+        $p_sql = Connection::getInstance()->prepare($sql);
+        $p_sql->execute();
+        return $p_sql->fetchAll(PDO::FETCH_ASSOC);
+    }    
 }
     
