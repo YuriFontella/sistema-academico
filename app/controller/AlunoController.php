@@ -39,7 +39,22 @@ class AlunoController extends Controller {
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-      echo "<script>alert('Alterado com sucesso')</script>";
+
+      $a->setNome($_POST['nome']);
+      $a->setCpf($_POST['cpf']);
+      $a->setEmail($_POST['email']);
+      $a->setFone($_POST['fone']);
+      $a->setDatanasc($_POST['datanasc']);
+
+      $data = $a->update($p);
+      if($data == true)
+      {
+        echo "<script>alert('Alterado com sucesso')</script>";
+      }
+      else
+      {
+        var_dump($data);
+      }
     }
   }
 

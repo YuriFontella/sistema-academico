@@ -71,8 +71,42 @@ class Model {
 
   }
 
-  public function update($model) {
+  public function update($param)
+  {
+    $model = $this;
+    try {
+      $sql = "UPDATE" . strtolower(get_class($this)) . "SET";
+      $propriedades = $this->getPotatos();
+      $p = [];
+      $v = [];
 
+      foreach ($propriedades as $propriedade => $valor)
+      {
+        $p[] = $propriedade . '=' . $propriedade;
+      }
+      $sql .= implode(',', $p);
+
+      $sql .= "WHERE id = '$param'";
+
+      $p_sql = Connection::getInstance()->prepare($sql);
+
+      foreach ($propriedades as $propriedade => $valor) {
+        $p = ':' . $propriedade;
+        $get = 'get' . ucfirst($propriedade);
+
+        $v = $model->$get();
+        $p_sql->bindValue($p, $v);
+      }
+
+      $p_sql->execute();
+      return true;
+
+    }
+
+    catch (PDOException $e)
+    {
+      echo 'Error: ' . $e->getMessage();
+    }
   }
 
   public function delete($p) {
