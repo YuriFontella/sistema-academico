@@ -18,7 +18,7 @@
         <td><?= $aluno['cpf'] ?></td>
         <td><?= $aluno['email'] ?></td>
         <td>
-          <a href="#">Editar</a>
+          <a href="<?= BASE_URL . "aluno/editar/" . $aluno['id'] ?>">Editar</a>
         </td>
         <td>
           <a href="<?= BASE_URL . "aluno/delete/" . $aluno['id'] ?>" onclick="return confirm('Deseja realmente deletar isso?')">Deletar</a>

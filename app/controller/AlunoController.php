@@ -30,6 +30,19 @@ class AlunoController extends Controller {
     }
   }
 
+  public function editar($p)
+  {
+    $this->view = 'matricula';
+    $a = new Aluno();
+    $aluno = $a->query("SELECT * FROM aluno WHERE id = $p");
+    $this->aluno = $aluno;
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+      echo "<script>alert('Alterado com sucesso')</script>";
+    }
+  }
+
   public function delete($p)
   {
     $aluno = new Aluno();
