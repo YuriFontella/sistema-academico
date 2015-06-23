@@ -5,8 +5,8 @@
         <th>DATA INICIO</th>
         <th>DATA FINAL</th>
     </tr>
-    <?php 
-    //var_dump($controller->turmas);
+    <?php
+    
     foreach ($controller->turmas as  $turma) { ?>
         <tr>
             <td><?= $turma['id'] ?></td>
@@ -14,5 +14,5 @@
             <td><?= $turma['data_inicio'] ?></td>
             <td><?= $turma['data_final'] ?></td>
         </tr>
-    <?php } ?> 
+    <?php } ?>
 </table>

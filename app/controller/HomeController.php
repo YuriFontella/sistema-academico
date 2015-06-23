@@ -7,8 +7,7 @@
 class HomeController extends Controller {
 
 	public function index() {
-            $this->view = 'painel';
-            return $this->view;
+    $this->view = 'painel';
 	}
 
 }

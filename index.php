@@ -13,7 +13,7 @@ list($c, $m, $p) = explode('/', $url);
 $c = ucfirst($c) . 'Controller';
 if ($m == null)
 {
-  $c = 'HomeController';
+  $c = ($c != 'Controller' ? $c : 'HomeController');
   $m = 'index';
 }
 

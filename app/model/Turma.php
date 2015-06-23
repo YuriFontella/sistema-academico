@@ -6,17 +6,17 @@
  * @author Luis Augusto Silva - luis.bc@hotmail.com
  */
 class Turma extends Model{
-    
+
     private $curso_id;
     private $data_inicio;
     private $data_final;
-    
+
     public function __construct($curso_id = null, $data_inicio = null, $data_fim = null) {
         $this->curso_id = $curso_id;
         $this->data_inicio = $data_inicio;
         $this->data_final = $data_fim;
     }
-    
+
     public function getCurso_id() {
         return $this->curso_id;
     }
@@ -42,16 +42,14 @@ class Turma extends Model{
     }
 
     public function retrieve() {
-        //$tableName = str_replace("controller","",$tableName);
+
         $sql = "SELECT turma.id,"
                 . "    turma.data_inicio,"
                 . "    turma.data_final, "
                 . "    curso.nome "
                 . "    FROM turma"
                 . "    JOIN curso on turma.curso_id = curso.id";
-        $p_sql = Connection::getInstance()->prepare($sql);
-        $p_sql->execute();
-        return $p_sql->fetchAll(PDO::FETCH_ASSOC);
-    }    
+
+        return $this->query($sql);
+    }
 }
-    
