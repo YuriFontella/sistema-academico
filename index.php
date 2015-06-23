@@ -1,6 +1,7 @@
 <?php
 
 /* Atom aqruivo modificado git integration para não ficar mais laranja */
+/* Testando o merge com dois branch */
 
 require_once 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
