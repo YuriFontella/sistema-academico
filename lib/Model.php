@@ -75,22 +75,23 @@ class Model {
   {
     $model = $this;
     try {
-      $sql = "UPDATE" . strtolower(get_class($this)) . "SET";
+      $sql = "UPDATE " . strtolower(get_class($this)) . " SET ";
       $propriedades = $this->getPotatos();
       $p = [];
       $v = [];
 
       foreach ($propriedades as $propriedade => $valor)
       {
-        $p[] = $propriedade . '=' . $propriedade;
+        $p[] = $propriedade . ' = ' . ':' . $propriedade;
       }
       $sql .= implode(',', $p);
 
-      $sql .= "WHERE id = '$param'";
+      $sql .= " WHERE id = $param";
 
       $p_sql = Connection::getInstance()->prepare($sql);
 
-      foreach ($propriedades as $propriedade => $valor) {
+      foreach ($propriedades as $propriedade => $valor)
+      {
         $p = ':' . $propriedade;
         $get = 'get' . ucfirst($propriedade);
 

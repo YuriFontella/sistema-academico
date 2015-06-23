@@ -23,9 +23,9 @@ class AlunoController extends Controller {
 
       if ($a->create()) {
         header('Location:' . BASE_URL . 'aluno/retrieve');
-      } else {
+      } else
+      {
         echo "<script>alert('Erro')</script>";
-        //header('location:' . BASE_URL);
       }
     }
   }
@@ -49,11 +49,11 @@ class AlunoController extends Controller {
       $data = $a->update($p);
       if($data == true)
       {
-        echo "<script>alert('Alterado com sucesso')</script>";
+        header('Location:' . BASE_URL . 'aluno/editar/' . $p);
       }
       else
       {
-        var_dump($data);
+        echo "<script>alert('Erro')</script>";
       }
     }
   }
