@@ -21,7 +21,7 @@
           <a href="#">Editar</a>
         </td>
         <td>
-          <a href="<?= BASE_URL . "aluno/delete/" . $aluno['id'] ?>">Deletar</a>
+          <a href="<?= BASE_URL . "aluno/delete/" . $aluno['id'] ?>" onclick="return confirm('Deseja realmente deletar isso?')">Deletar</a>
         </td>
       </tr>
     <?php endforeach ?>

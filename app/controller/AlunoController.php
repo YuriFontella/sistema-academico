@@ -34,9 +34,7 @@ class AlunoController extends Controller {
   {
     $aluno = new Aluno();
     if($aluno->delete($p))
-    {
-      header('Location: ' . BASE_URL . 'aluno');
-    }
+    header('Location: ' . BASE_URL . 'aluno/index');
   }
 
 }
