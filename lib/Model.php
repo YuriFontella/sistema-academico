@@ -82,6 +82,7 @@ class Model {
     $sql = "DELETE FROM $tableName WHERE id = $p";
     $p_sql = Connection::getInstance()->prepare($sql);
     $p_sql->execute();
+    return true;
 
   }
 
